@@ -20,7 +20,7 @@ Make sure the required development tools are installed:
 
 Ubuntu:
 ```
-sudo apt-get install gcc make flex bison byacc git
+sudo apt-get install gcc-9 make flex bison byacc git
 ```
 
 CentOS/RHEL:
@@ -54,9 +54,13 @@ make OS=MACOS
 
 ## Using the TPC-DS tools
 
+Add `export PATH=$PATH:~/tpcds-kit/tools` to `~/.bashrc` and run `source ~/.bashrc`
+
 ### Data generation
 
 Data generation is done via `dsdgen`.  See `dsdgen -help` for all options.  If you do not run `dsdgen` from the `tools/` directory then you will need to use the option `-DISTRIBUTIONS /.../tpcds-kit/tools/tpcds.idx`. The output directory (specified via the `-DIR` option) must exist prior to running `dsdgen`. 
+
+You can run `data_import.sh` to import data to the postgresql.
 
 ### Query generation
 
